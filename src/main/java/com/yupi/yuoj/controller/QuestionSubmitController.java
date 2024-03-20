@@ -5,6 +5,7 @@ import com.yupi.yuoj.common.BaseResponse;
 import com.yupi.yuoj.common.ErrorCode;
 import com.yupi.yuoj.common.ResultUtils;
 import com.yupi.yuoj.exception.BusinessException;
+import com.yupi.yuoj.judge.JudgeService;
 import com.yupi.yuoj.model.dto.questionsubmit.QuestionSubmitAddRequest;
 import com.yupi.yuoj.model.dto.questionsubmit.QuestionSubmitQueryRequest;
 import com.yupi.yuoj.model.entity.QuestionSubmit;
@@ -35,6 +36,7 @@ public class QuestionSubmitController {
     @Resource
     private UserService userService;
 
+
     /**
      * 提交题目
      *
@@ -48,7 +50,7 @@ public class QuestionSubmitController {
         if (questionSubmitAddRequest == null || questionSubmitAddRequest.getQuestionId() <= 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
-        // 登录才能点赞
+        // 登录才能提交
         final User loginUser = userService.getLoginUser(request);
         long questionSubmit = questionSubmitService.doQuestionSubmit(questionSubmitAddRequest, loginUser);
         return ResultUtils.success(questionSubmit);
