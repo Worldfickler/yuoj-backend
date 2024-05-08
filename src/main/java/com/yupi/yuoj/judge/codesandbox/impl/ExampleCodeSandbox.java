@@ -3,9 +3,8 @@ package com.yupi.yuoj.judge.codesandbox.impl;
 import com.yupi.yuoj.judge.codesandbox.CodeSandbox;
 import com.yupi.yuoj.judge.codesandbox.model.ExecuteCodeRequest;
 import com.yupi.yuoj.judge.codesandbox.model.ExecuteCodeResponse;
-import com.yupi.yuoj.model.dto.questionsubmit.JudgeInfo;
+import com.yupi.yuoj.judge.codesandbox.model.JudgeInfo;
 import com.yupi.yuoj.model.enums.JudgeInfoMessageEnum;
-import com.yupi.yuoj.model.enums.QuestionSubmitLanguageEnum;
 import com.yupi.yuoj.model.enums.QuestionSubmitStatusEnum;
 
 import java.util.List;
